@@ -1,0 +1,38 @@
+/*mystyle.css*/
+h1{
+    color: rgb(175, 98, 146);
+    /* color: rgb(99, 66, 86); */
+    font-size: 50px;
+    
+}
+form:hover{
+    background-color: rgb(253, 226, 232);
+}
+form{
+    font-family: 'Mitr';
+    font-size: 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px; 
+    margin: 10px 730px 0px 730px;
+    border-radius: 10px;
+    background-color: rgb(230, 187, 200);
+    /* box-shadow: 0 30px 50px rgba(202, 123, 123, 0.1); */
+    /* border: solid rebeccapurple; */
+}
+body{
+    background-color: linen;
+    /* background-image: url("Screenshot 2024-03-19 180144.png");   */
+}
+input:active {
+    background-color: rgb(236, 10, 10);
+    }
+input:hover{
+    background-color: rgb(175, 98, 146);
+        }
+textarea:active {
+    background-color: rgb(245, 149, 181);
+    }

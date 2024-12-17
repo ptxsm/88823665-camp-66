@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS</title>
+    <title>CSS-tamplate</title>
     <meta charset="UTF-8" />
 
     <!--http://localhost/88823665-camp-66-->
@@ -15,65 +15,79 @@
     <link href="css\bootstrap.min.css" rel="stylesheet">
     <script src="js\bootstrap.bundle.min.js"></script>
   </head>
-  <body class="container">
-    <div class="container text-center">
+  <body>
+    <form>
+    <br>
+    <div class="container">
         <div class="row">
-          <div class="col">
-           <b>ชื่อ</b> 
-          </div>
-          <div class="col">
-           <input type="text" />
-          </div>
+        <div class="col-sm-4"><p><label for="name" class="form-label">ชื่อ</label><label class="text-danger">*</label></p></div>
+        <div class="col-sm-8"><input type="text" class="form-control" id="name" placeholder="ชื่อ"></div>
+        <div class="col-sm-4"><p><label for="lastname" class="form-label">สกุล</label><label class="text-danger">*</label></p></div>
+        <div class="col-sm-8"><input type="text" class="form-control" id="lastname" placeholder="นามสกุล"></div>
+        <div class="col-sm-4"><p><label for="brith">วัน/เดือน/ปีเกิด</label></p></div>
+        <div class="col-sm-8"><input type="date" class="form-control" name="วัน/เดือน/ปีเกิด" id="brith" ></div>
+        <p></p><div class="col-sm-4"><label for="age" class="form-label">อายุ</label></p></div>
+        <div class="col-sm-8"><input type="text" class="form-control" id="age" ></div>
+        <div class="col-sm-4"><p><label for="sex" class="form-label">เพศ</label></p></div>
+        <div class="col-sm-8">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="male">
+                <label class="form-check-label" for="male">
+                  ชาย
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="female" >
+                <label class="form-check-label" for="female">
+                  หญิง
+                </label>
+              </div>
         </div>
-        <div class="row">
-          <div class="col">
-            1 of 3
-          </div>
-          <div class="col">
-            2 of 3
-          </div>
-          <div class="col">
-            3 of 3
-          </div>
+        <div class="col-sm-4"><p><label for="fileInput" class="form-label">รูป</label></p></div>
+        <div class="col-sm-8">
+            <div class="mb-3">
+            <input class="form-control" type="file" id="formFile">
+            </div>
         </div>
-      </div>
-        
-        สกุล<input type="   text" />
-        <label for="brith">วัน/เดือน/ปีเกิด</label>
-        <input
-                  type="date"
-                  id="brith"
-                  name="วัน/เดือน/ปีเกิด"
-                  placeholder="dd-mm-yyyy"
-                  value=""
-        />
-        อายุ<input type="text" />
-        <label for="sex">เพศ</label>
-        <input type="radio" id="sex" name="เพศ" />ชาย&ensp;
-        <input type="radio" id="sex" name="เพศ" />หญิง
-        รูป<input type="file" />
-        ที่อยู่<textarea rows="5" cols="21"></textarea>
-        สีที่ชอบ
-                <select name="language" id="language">
-                  <option value="สีขาว">สีขาว</option>
-                  <option value="สีม่วง">สีม่วง</option>
-                  <option value="สีดำ">สีดำ</option>
-                  <option value=" สีแดง" selected>สีแดง&ensp;</option>
-                </select>
-        <label for="song">แนวเพลงที่ชอบ</label>
-                <input
-                  type="radio"
-                  id="song"
-                  name="แนวเพลงที่ชอบ"
-                />เพื่อชีวิต&ensp;
-                <input
-                  type="radio"
-                  id="song"
-                  name="แนวเพลงที่ชอบ"
-                />ลูกทุ่ง&ensp;
-                <input type="radio" id="song" name="แนวเพลงที่ชอบ" />อื่นๆ
-        <input type="checkbox" /> ยินยอมให้เก็บข้อมูล
-                <input type="reset" id="reset" />
-                <input type="submit" id="submit" />
+        <div class="col-sm-4"><p><label for="Adress" class="form-label">ที่อยู่</label></p></div>
+        <div class="col-sm-8"> <textarea class="form-control" id="Adress" rows="3"></textarea></div>
+        <p><div class="col-sm-4"><label for="color" class="form-label">สี</label></p></div>
+        <div class="col-sm-8"><input type="text" class="form-control" id="color" placeholder="สีแดง"></div>
+        <div class="col-sm-4"><p><label for="song" class="form-label">เพลง</label></p></div>
+        <div class="col-sm-8">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="song" id="เพื่อชีวิต">
+                <label class="form-check-label" for="เพื่อชีวิต">
+                  เพื่อชีวิต
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="song" id="ลูกทุ่ง" >
+                <label class="form-check-label" for="ลูกทุ่ง">
+                  ลูกทุ่ง
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="song" id="อื่นๆ" >
+                <label class="form-check-label" for="อื่นๆ">
+                  อื่นๆ
+                </label>
+              </div>
+        </div>
+        <div class="col-sm-4"><p>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="ยินยอมให้เก็บข้อมูล">
+            <label class="form-check-label" for="ยินยอมให้เก็บข้อมูล">
+              ยินยอมให้เก็บข้อมูล
+            </label>
+            </div>
+            </p>
+        </div>
+        <div class="col-sm-8"></div> 
+        <div class="col-sm-4"><p><input type="reset" class="btn btn-secondary" value="reset"></p></div>
+        <div class="col-sm-8 text-end" ><input type="submit" class="btn btn-success" value="Submit"></div>
+    </div>
+    </form>
   </body>
+
 </html>

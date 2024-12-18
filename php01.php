@@ -11,8 +11,9 @@
             <h1>สูตรคูณแม่ <?php echo $myvar; ?></h1>
             <?php 
             for ($i = 1 ; $i <= 12; $i++){
-                $result = $myvar *= $i;
-                $myvar = 2;
+                
+                $result = $myvar * $i;
+                
             echo "$myvar * $i  = $result <br>";
             
             }

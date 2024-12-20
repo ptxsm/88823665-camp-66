@@ -1,0 +1,27 @@
+div.col :hover{
+    background-color: var(--bs-danger-border-subtle);
+}
+button.btn-secondary.dropdown-toggle:hover{
+    background-color:rgb(35, 65, 119);
+}
+button.btn-secondary.dropdown-toggle{
+    
+    width: 200px;
+    height: 50px;
+}
+button.btn-secondary.dropdown-toggle.show{
+    width: 250px;
+    height: 100px;
+}
+img.rounded.float-start{
+    width: 285px;
+    height: 787.5px;
+    margin-left: 300px;
+}
+img.rounded.float-end{
+    width: 285px;
+    height: 787.5px;
+    margin-right: 300px;
+}
+
+

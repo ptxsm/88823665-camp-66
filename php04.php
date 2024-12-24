@@ -12,7 +12,7 @@
 
 <body class="container text-center">
     <div class="p-3 text-primary-emphasis bg-primary-subtle border border-subtle-3 text-center">
-        <h1>เลขคู่ เลขคี่ <span class="badge text-bg-secondary">1-100</span></h1>
+        <h1>เลขคู่ เลขคี่ <span class="badge text-bg-secondary"></span></h1>
     </div>
     <br><br>
     <div >

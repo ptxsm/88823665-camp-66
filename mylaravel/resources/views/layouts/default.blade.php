@@ -1,13 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        @yield('head')
-    </head>
-    <body>
-        @yield('be4_body')
-        @yield('body')
-    </body>
-</html> -->
+
 <!doctype html>
 <html lang="en">
   <!--begin::Head-->

@@ -27,7 +27,8 @@ Route::get('/register',
 Route::get('/', function () {
     return view('home');
 });
-
+Route::post('/register',
+ [RegisterController::class, 'store']);
 
 Route::get('/hello{/id?}', 
     function ($val = ""){

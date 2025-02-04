@@ -2,6 +2,7 @@
 <html lang="en">
   <!--begin::Head-->
   <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AdminLTE 4 | Login Page</title>
     <!--begin::Primary Meta Tags-->
@@ -51,7 +52,21 @@
   <!--end::Head-->
   <!--begin::Body-->
   <body class="bg-body-secondary">
-    @yield('content')
+    <div class="layout-fixed sidebar-expand-lg">
+        <div class="app-wrapper">
+            @include('components.header')
+            @include('components.menu')
+            <main class="app-main">
+                @include('components.top_nav')
+                <!--begin::App Content-->
+                <div class="app-content">
+                    @yield('content')
+                </div>
+                <!--end::App Content-->
+            </main>
+            @include('components.footer')
+        </div>
+    </div>
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"

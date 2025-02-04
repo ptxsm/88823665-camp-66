@@ -18,6 +18,18 @@ class UserController extends Controller
         return view('user.edit', $data);
     }
     function edit_action(Request $req){
-        print_r($req->input());
+        // print_r($req->input());
+        $muser = User::find($req->id);
+        $muser->name = $req->name;
+        $muser->email = $req->email;
+        $muser->password = $req->password;
+        $muser->save();
+        return redirect('/users');
+        
+    }
+    function delete(Request $req){
+        $muser =User::find($req->id);
+        $muser->delete();
+        return redirect('/users');
     }
 }

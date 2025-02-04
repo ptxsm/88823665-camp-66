@@ -17,13 +17,20 @@
             </thead>
             <tbody>
              <?php foreach ($users as $index => $user) { ?>
-              <tr class="align-middle">
+              <class="align-middle">
                 <td>{{ $index+1 }}.</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
+                  <a href="{{url('/user/'.$user->id)}}">
                     <button class="btn btn-warning">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                  </a>
+                  <form action="{{url('/user')}}" method = "post" style="display: inline;">
+                    @csrf
+                    @method('delete')
+                    <input type="hidden" name="id" value="{{$user->id}} ">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
                 </td>
               </tr>
               <?php } ?>

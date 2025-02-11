@@ -25,18 +25,18 @@
                   <a href="{{url('/user/'.$user->id)}}">
                     <button class="btn btn-warning">Edit</button>
                   </a>
-                  <form action="{{url('/user')}}" method = "post"  style="display: inline;">
+                  <form action="{{url('/user')}}" onsubmit="return comfirm_delete()" method = "post"  style="display: inline;">
                     @csrf
                     @method('delete')
                     <input type="hidden" name="id" value="{{$user->id}} ">
-                    <button type="submit" class="btn btn-danger" onformchange="comfirm_delete()" >Delete</button>
+                    <button type="submit"  class="btn btn-danger" onclick = "comfirm_delete()">Delete</button>
                   </form>
-                  <button class="btn" type="submit" ontimeupdate="comfirm_delete()">Click me</button>
+                  
                 </td>
               </tr>
               <?php } ?>
             </tbody>
-          </table>
+          </table>  
         </div>
         <!-- /.card-body -->
         <div class="card-footer clearfix">
@@ -48,7 +48,12 @@
             <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
           </ul>
         </div>
+        
       </div>
+      <button class="btn" type="submit" onclick="comfirm_delete()">Click me</button>
+      <a href="{{url('/register')}}">
+                    <button class="btn btn-warning">Back</button>
+                  </a>
       <!-- /.card -->
     </div>
 </div>
@@ -64,7 +69,10 @@
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
+        console.log(confirmButtonColor);
+        
+      })
+      .then((result) => {
         console.log("Result" ,result)
         if (result.isConfirmed) {
           console.log("Delete It!",result)

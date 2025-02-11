@@ -9,25 +9,37 @@
       <div class="card">
         <div class="card-body register-card-body">
           <p class="register-box-msg">Register a new membership</p>
-          <form action="{{url ('/register')}}" onsubmit="return myfunction();" method="post">  
+          <form action="{{url ('/register')}}"    method="post">  
           @csrf
             <div class="input-group mb-3">
-              <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" />
+              <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" oninput = "return name()"  />
               <div class="input-group-text"><span class="bi bi-person"></span></div>
               <div class="valid-feedback">
                 OK
               </div>
               <div class="invalid-feedback" id="invalid-name">
-                กรุณาระบุข้อมูล name
+                กรุณาระบุข้อมูล
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="email" name = "email" id = "email" class="form-control" placeholder="Email" />
+              <input type="email" name = "email" id = "email" class="form-control" placeholder="Email"   />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+              <div class="valid-feedback">
+                OK
+              </div>
+              <div class="invalid-feedback" id="invalid-email">
+                กรุณาตรวจสอบข้อมูล email ต้องมี @ และ . 
+              </div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" name="password" id="pass" class="form-control" placeholder="Password" />
+              <input type="password" name="password" id="pass" class="form-control" placeholder="Password"  />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+              <div class="valid-feedback">
+                OK
+              </div>
+              <div class="invalid-feedback" id="invalid-pass">
+              กรุณาตรวจสอบรหัสผ่าน รหัสผ่านต้องมีตัวเลข ตัวพิมพ์เล็ก และตัวพิมพ์ใหญ่
+              </div>
             </div>
             <!--begin::Row-->
             <div class="row">
@@ -36,7 +48,13 @@
                   <input class="form-check-input" type="checkbox" id="mycheckbox" value="" id="flexCheckDefault" />
                   <label class="form-check-label" for="flexCheckDefault">
                     I agree to the <a href="#">terms</a>
-                  </label>
+                  </label> 
+                  <div class="valid-feedback">
+                  OK
+                  </div>
+                  <div class="invalid-feedback" id="invalid-checkbox">
+                  กรุณายอมรับเงื่อนไข
+                  </div>        
                 </div>
               </div>
               <!-- /.col -->
@@ -49,7 +67,7 @@
             </div>
             <!--end::Row-->
           </form>
-          <button class="btn" onclick="myfunction()">Click me</button>
+          <!-- <button class="btn" onclick="return myfunction()">Click me</button> -->
           <div class="social-auth-links text-center mb-3 d-grid gap-2">
           
           </div>
@@ -66,40 +84,123 @@
   @endsection
   @section('scripts')
   <script>
-      let $myval
-      var myval2 = "value of myval2"
-      const myval3 = ""
+       
 
-      console.log("Hello World!")
 
-      // alert("hello world!")
-      function myfunction(){
-        // console.log("in myfunction")
+    //   function myfunction(){
+
+    //     let isValid = true; 
+    //     let name = document.getElementById('name')
+    //     name = $('#name')
+    //     let email =document.getElementById('email').value.trim();
+    //     emailCheck =$('#email')
+    //     let pass = document.getElementById('pass').value.trim();
+    //     password= $('#pass')
+    //     let mycheckbox = document.getElementById('mycheckbox').checked;
+    //     checkbox  = $('#mycheckbox')
+    //     let n = ""; 
+
+    //     if(name.val()== n){
+    //       name.addClass('is-invalid');
+    //       $('#invalid-name')
+    //       isValid = false;          
+    //     }
+    //     else{
+    //       name.removeClass('is-invalid');
+    //     }  
+    //     if(name.val()!= n){
+    //         name.addClass('is-valid');     
+    //     }else{
+    //         name.removeClass('is-valid');
+    //     }
+        
+    //       if( emailCheck.val() == n  ){
+    //         emailCheck.addClass('is-invalid');
+    //         $('#invalid-email')
+    //         isValid = false;       
+    //        }
+    //       else{
+    //         emailCheck.removeClass('is-invalid');
+        
+    //       }
+    //     let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{0,3}$/;
+    //     if(emailCheck.val() != n){
+    //       if(!email.match(emailPattern)){
+    //         emailCheck.addClass('is-invalid');
+    //         $('#invalid-email')
+    //         isValid = false;
+    //       }else{
+    //         emailCheck.removeClass('is-invalid'); if(email.match(emailPattern )){
+    //           emailCheck.addClass('is-valid');      
+    //         }
+    //         else{
+    //           emailCheck.removeClass('is-valid');
+          
+    //         }
+    //       }
+    //     }
+        
+                   
+    //     if( password.val() == n ){
+    //       password.addClass('is-invalid');
+    //       $('#invalid-pass')
+    //       isValid = false;        }
+    //     else{
+    //       password.removeClass('is-invalid');
+    //     }
+    //     let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+    //     if(password.val() != n){
+    //       if (!pass.match(passwordPattern)) {
+    //         password.addClass('is-invalid');
+    //         $('#invalid-pass')
+    //         isValid = false;          
+    //       }else{
+    //         password.removeClass('is-invalid'); 
+    //         if (pass.match(passwordPattern)) {
+    //         password.addClass('is-valid');
+    //       }else{
+    //         password.removeClass('is-valid')
+    //       }
+    //     }
+    //   }
+    //   if (!mycheckbox) {
+    //     checkbox.addClass('is-invalid');
+    //         $('#invalid-checkbox')
+    //         isValid = false;          
+    //   }else{
+    //         checkbox.removeClass('is-invalid')
+    //   }
+    
+    //   return isValid;
+    // }
+    function name(){
         let name = document.getElementById('name')
         name = $('#name')
-        let email =document.getElementById('email')
-
-        let pass = document.getElementById('pass')
-
-        let mycheckbox = document.getElementById('mycheckbox')
-        // document.getElementsByClassName()
-        // name.value = "my name value"
-        // name.val("my name value")  
-        console.log(name.val(), email.value, pass.value, mycheckbox.checked)
-        if(name.val()== "my name value"){
+        let n = "";
+          if(name.val()== n){
           name.addClass('is-invalid');
-          $('#invalid-name').html("NO")
-          return false;
-        }else{
-          name.removeClass('is-invalid');
+          $('#invalid-name')
+          return false;          
         }
-        return true;
-      }
+        else{
+          name.removeClass('is-invalid');
+        }  
+        if(name.val()!= n){
+            name.addClass('is-valid');     
+        }else{
+            name.removeClass('is-valid');
+        }
+        return ture;
+
+    }
+
       
-      myfunction()
+      
+      
+     
   </script>
     
-  <script>
+  <!-- <script>
     console.log(myval2)
-  </script>
+  </script> -->
   @endsection

@@ -12,7 +12,7 @@
     <button class="btn btn-primary mt-3" type="button" id="btn-add-product-list"> + เพิ่ม product</button>
     <div class="row mt-3" id="product-list"> 
         <div class="col-6">
-            <label>Procuct Name <button type="button" 
+            <label>Product Name <button type="button" 
                                 class="btn btn-danger ml-3 mt-2 mb-2 btn-del-product-list">ลบ</button></label>
             <input name="product_name[]" type="text" class="form-control">
         </div>
@@ -28,7 +28,7 @@
             <td>User Name</td>
         </tr>
     </thead>
-    <!-- <tbody>
+    <tbody>
         <tr>
             <td>1</td>
             <td>Category name</td>
@@ -39,7 +39,7 @@
                 </ul>
             </td>
         </tr>
-    </tbody> -->
+    </tbody>
 </table>
 @endsection
 @section('scripts')
@@ -58,7 +58,6 @@
             // console.log('click delete')
             $(this).parent().parent().remove();
         })
-        
     })
 
 </script>

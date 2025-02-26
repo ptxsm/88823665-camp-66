@@ -57,6 +57,12 @@
             @endforeach
         </tbody>
 </table>
+<a href="{{url('/users')}}">
+                    <button class="btn btn-warning">Back</button>
+                  </a>
+                  <a href="{{url('/logout')}}">
+                    <button class="btn btn-danger">logout</button>
+                  </a>
 @endsection
 @section('scripts')
 <script>

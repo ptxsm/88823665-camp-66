@@ -55,6 +55,9 @@
       <a href="{{url('/register')}}">
                     <button class="btn btn-warning">Back</button>
                   </a>
+                  <a href="{{url('/product')}}">
+                    <button class="btn btn-warning">Go to product</button>
+                  </a>
       <!-- /.card -->
     </div>
 </div>

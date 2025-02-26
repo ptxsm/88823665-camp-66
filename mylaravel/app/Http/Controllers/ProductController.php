@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\ProductList;
 
+
 class ProductController extends Controller
 {
-    //
-    function index(){
-        return view('product');
+    function index() {
+        $category = Category::with('products')->get();
+        return view('product',compact('category'));
+        //return view('product');
     }
 
     function add_product(Request $req){
@@ -25,7 +27,7 @@ class ProductController extends Controller
             $product->user_id = session('user')->id;
             $product->save();
         }
-
         return redirect('/product');
     }
+
 }

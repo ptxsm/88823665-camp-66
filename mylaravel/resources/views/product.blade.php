@@ -28,7 +28,7 @@
             <td>User Name</td>
         </tr>
     </thead>
-    <tbody>
+    <!-- <tbody>
         <tr>
             <td>1</td>
             <td>Category name</td>
@@ -39,7 +39,23 @@
                 </ul>
             </td>
         </tr>
-    </tbody>
+    </tbody> -->
+    <tbody>
+            @foreach ($category as $index => $categories)
+            <tr>
+                <td>{{ $index + 1 }}.</td>
+                <td>{{ $categories->name }}</td>
+                <td>
+                    <ul>
+                        @foreach ($categories->products as $product)
+                            <li>{{ $product->name }}</li>
+                        @endforeach
+                    </ul>
+                </td>
+                <td>{{ $categories->products->first()->user->name ?? '-' }}</td>
+            </tr>
+            @endforeach
+        </tbody>
 </table>
 @endsection
 @section('scripts')
